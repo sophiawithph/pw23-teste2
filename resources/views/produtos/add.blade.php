@@ -5,6 +5,11 @@
 @section('content')
 
     <h2>Adicione seu produto</h2>
+  @if ($errors)
+      @foreach ( $errors->all() as $err )
+          {{ $err }} <br>
+      @endforeach
+  @endif
 <div style="background:rgb(0, 0, 0, 0.8); padding: 15px; width: 190px; border-radius: 10%;">
     <form action="{{ route('produtos.addSave') }}" method="post">
         @csrf

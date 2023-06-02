@@ -10,14 +10,14 @@
           {{ $err }} <br>
       @endforeach
   @endif
-<div style="background:rgb(0, 0, 0, 0.8); padding: 15px; width: 190px; border-radius: 10%;">
+<div>
     <form action="{{ route('produtos.addSave') }}" method="post">
         @csrf
-        <input type="text" name="name" placeholder="Nome do produto">
+        <input type="text" name="name" placeholder="Nome do produto" value="{{ old ('name') }}">
         <br>
-        <input type="number" name="price" step="0.01" placeholder="Preço do produto">
+        <input type="number" name="price" step="0.01" placeholder="Preço do produto" value="{{ old ('price') }}">
         <br>
-        <input type="number" name="quanlity" placeholder="Quantidade">
+        <input type="number" name="quanlity" placeholder="Quantidade" value="{{ old ('quanlity') }}">
         <hr>
         <button class="submit" value="gravar" style="width: 177px; ">Gravar</button>
     </form>
